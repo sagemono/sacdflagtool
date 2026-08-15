@@ -11,8 +11,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent
 BUILD_DIR    = PROJECT_ROOT / 'build'
 SOURCES      = ['main.c', 'gcm.c', 'ui.c', 'applog.c', 'lv2patch.c', 'sacd.c']
-OUT_ELF      = BUILD_DIR / 'sacd_enable.elf'
-OUT_SELF     = BUILD_DIR / 'sacd_enable.self'
+OUT_ELF      = BUILD_DIR / 'sacd_flag_tool.elf'
+OUT_SELF     = BUILD_DIR / 'sacd_flag_tool.self'
 
 
 def _normalize_path(s: str) -> str:
@@ -80,7 +80,7 @@ def clean() -> None:
     print('[*] cleaned build/')
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description='sacd_enable build driver')
+    ap = argparse.ArgumentParser(description='sacd_flag_tool build driver')
     ap.add_argument('mode', nargs='?', default='elf', choices=('elf', 'fself', 'clean'), help='elf: compile only (default); fself: fake-signed self; ' 'clean: remove build/')
     args = ap.parse_args()
 

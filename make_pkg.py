@@ -13,8 +13,8 @@ SCETOOL_EXE = os.path.join(SCETOOL_DIR, "scetool.exe")
 BUILD_DIR = os.path.join(SCRIPT_DIR, "build")
 
 PKG = {
-    "elf":       os.path.join("build", "sacd_enable.elf"),
-    "out":       os.path.join("build", "sacd_enable.pkg"),
+    "elf":       os.path.join("build", "sacd_flag_tool.elf"),
+    "out":       os.path.join("build", "sacd_flag_tool.pkg"),
     "contentid": "UP0001-SACDENABL_00-0000000000000000",
     "title_id":  "SACDENABL",
     "title":     "SACD flag tool",
@@ -165,7 +165,7 @@ def main():
             sys.exit(1)
 
         os.makedirs(BUILD_DIR, exist_ok=True)
-        npdrm_self = os.path.join(BUILD_DIR, "sacd_enable_npdrm.self")
+        npdrm_self = os.path.join(BUILD_DIR, "sacd_flag_tool_npdrm.self")
         if not sign_elf_npdrm(elf_path, npdrm_self, contentid):
             print("[!] NPDRM signing failed.")
             print("    Check that scetool/data/keys and curves are present.")
