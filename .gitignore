@@ -1,0 +1,17 @@
+build/
+pkg_staging/
+*.elf
+*.self
+*.pkg
+*.map
+
+__pycache__/
+*.pyc
+*.pyd
+*.obj
+*.exp
+*.lib
+
+ps3py
+scetool/
+selfresigner/
